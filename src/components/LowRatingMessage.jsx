@@ -1,7 +1,11 @@
 import React from "react";
 import { TiArrowForward } from "react-icons/ti";
+import { useDispatch, useSelector } from "react-redux";
+import { incrementPage } from "../redux/counter";
 
 const LowRatingMessage = () => {
+  const { page } = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
   const [message, setMessage] = "";
 
   const handleChange = (e) => {
@@ -22,7 +26,10 @@ const LowRatingMessage = () => {
             ></textarea>
           </div>
           <div className="w-4/5 absolute bottom-5 rounded-lg">
-            <button className="flex justify-center align-middle items-center bg-blue-800 py-2 w-full text-white font-bold">
+            <button
+              className="flex justify-center align-middle items-center bg-blue-800 py-2 w-full text-white font-bold"
+              onClick={() => dispatch(incrementPage())}
+            >
               <span className="mr-1">
                 <TiArrowForward />
               </span>

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { setRate } from "../redux/counter";
 
 const StarsRating = () => {
-  const [rate, setRate] = useState(0);
+  const { page, rate } = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
   const [hoverValue, setHoverValue] = useState(undefined);
 
   const rating = [
@@ -25,7 +28,7 @@ const StarsRating = () => {
 
   const handleSubmit = (id) => {
     setRate(id);
-    // console.log(id);
+    console.log(id);
   };
 
   return (
@@ -44,9 +47,9 @@ const StarsRating = () => {
               className={`${rating.color} text-5xl px-1 cursor-pointer ${
                 hoverValue > rating.id - 1 ? "text-blue-800" : " "
               }`}
-              onClick={(e) => handleSubmit(rating.id)}
-              onMouseOver={() => handleMouseOver(rating.id)}
-              onMouseLeave={handleMouseLeave}
+              onClick={() => dispatch(setRate(rating.id))}
+              onMouseOver={() => setHoverValue(rating.id)}
+              onMouseLeave={() => setHoverValue(undefined)}
             >
               <FaStar className="" />
             </span>
