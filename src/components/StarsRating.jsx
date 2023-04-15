@@ -40,7 +40,7 @@ const StarsRating = () => {
             <span
               key={rating.id}
               className={`${rating.color} text-5xl px-1 cursor-pointer   ${
-                hoverValue > rating.id - 1 ? "text-yellow-400" : ""
+                hoverValue > rating.id - 1 ? "text-blue-900" : "" //text-blue-500 doesn't work
               }`}
               onClick={() => dispatch(setRate(rating.id))}
               onMouseOver={() => handleMouseOver(rating.id)}
