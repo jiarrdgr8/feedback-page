@@ -19,16 +19,11 @@ const StarsRating = () => {
 
   const handleMouseOver = (value) => {
     setHoverValue(value);
-    // console.log(hoverValue);
+    console.log(hoverValue);
   };
 
   const handleMouseLeave = (value) => {
     setHoverValue(undefined);
-  };
-
-  const handleSubmit = (id) => {
-    setRate(id);
-    console.log(id);
   };
 
   return (
@@ -44,17 +39,18 @@ const StarsRating = () => {
           return (
             <span
               key={rating.id}
-              className={`${rating.color} text-5xl px-1 cursor-pointer ${
-                hoverValue > rating.id - 1 ? "text-blue-800" : " "
+              className={`${rating.color} text-5xl px-1 cursor-pointer   ${
+                hoverValue > rating.id - 1 ? "text-yellow-400" : ""
               }`}
               onClick={() => dispatch(setRate(rating.id))}
-              onMouseOver={() => setHoverValue(rating.id)}
-              onMouseLeave={() => setHoverValue(undefined)}
+              onMouseOver={() => handleMouseOver(rating.id)}
+              onMouseLeave={() => handleMouseLeave(undefined)}
             >
               <FaStar className="" />
             </span>
           );
         })}
+        {/* {console.log(hoverValue)} */}
       </div>
     </div>
   );
