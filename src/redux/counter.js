@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   page: 1,
   rate: 0,
-  hoverValue: undefined
+  // hoverValue: undefined
 }
 
 export const counterSlice = createSlice({
