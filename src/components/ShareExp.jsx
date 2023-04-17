@@ -2,8 +2,12 @@ import React from "react";
 import google from "../assets/google.png";
 import fb from "../assets/fb.png";
 import twitter from "../assets/twitter.png";
+import { useDispatch } from "react-redux";
+import { setPage } from "../redux/counter";
 
 const ShareExp = () => {
+  const dispatch = useDispatch();
+
   const links = [
     {
       id: 1,
@@ -66,7 +70,10 @@ const ShareExp = () => {
           );
         })}
       </div>
-      <div className="flex justify-end pt-3 cursor-pointer hover:scale-105 duration-300">
+      <div
+        className="flex justify-end pt-3 cursor-pointer hover:scale-105 duration-300"
+        onClick={() => dispatch(setPage(6))}
+      >
         <h2>No thanks &gt;</h2>
       </div>
     </div>

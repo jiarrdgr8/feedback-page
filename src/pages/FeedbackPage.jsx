@@ -10,6 +10,10 @@ import LowRatingMessage from "../components/LowRatingMessage";
 import LastMessage from "../components/LastMessage";
 import FillUpForm from "../components/FillUpForm";
 import { useSelector } from "react-redux";
+import TellUsYourStory from "../components/TellUsYourStory";
+import Story from "../components/Story";
+import HelpUsGrow from "../components/HelpUsGrow";
+import Suggestions from "../components/Suggestions";
 
 const FeedbackPage = () => {
   const { page } = useSelector((state) => state.counter);
@@ -37,8 +41,8 @@ const FeedbackPage = () => {
     case 3:
       pageContent = (
         <>
-          <Fantastic />
-          <ShareExp />
+          <LowRatingResponse />
+          <LowRatingMessage />
         </>
       );
       break;
@@ -46,8 +50,8 @@ const FeedbackPage = () => {
     case 4:
       pageContent = (
         <>
-          <LowRatingResponse />
-          <LowRatingMessage />
+          <LastMessage />
+          <FillUpForm />
         </>
       );
       break;
@@ -55,8 +59,26 @@ const FeedbackPage = () => {
     case 5:
       pageContent = (
         <>
-          <LastMessage />
-          <FillUpForm />
+          <Fantastic />
+          <ShareExp />
+        </>
+      );
+      break;
+
+    case 6:
+      pageContent = (
+        <>
+          <TellUsYourStory />
+          <Story />
+        </>
+      );
+      break;
+
+    case 7:
+      pageContent = (
+        <>
+          <HelpUsGrow />
+          <Suggestions />
         </>
       );
       break;
@@ -71,7 +93,9 @@ const FeedbackPage = () => {
   }
 
   return (
-    <div className="h-screen md:flex justify-around mx-24">{pageContent}</div>
+    <div className="h-screen flex flex-col md:flex-row justify-around align-middle items-center mx-20">
+      {pageContent}
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { BsChevronLeft } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { decrementPage } from "../redux/counter";
 
-const TellUsYourStory = () => {
+const HelpUsGrow = () => {
   const dispatch = useDispatch();
 
   return (
@@ -15,15 +15,13 @@ const TellUsYourStory = () => {
         <span className="mr-1 pt-2">
           <BsChevronLeft />
         </span>
-        <h3 className="text-2xl ">
-          We'd love to know what made your experience great.
-        </h3>
+        <h3 className="text-2xl ">Help us grow!</h3>
       </div>
       <h4 className="my-5 text-xl flex items-center ml-5 ">
-        Tell us your story!
+        How would you say should we expand next?
       </h4>
     </div>
   );
 };
 
-export default TellUsYourStory;
+export default HelpUsGrow;

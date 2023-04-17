@@ -20,7 +20,7 @@ const StarsRating = () => {
 
   const handleMouseOver = (value) => {
     setHoverValue(value);
-    // console.log(hoverValue);
+    console.log(hoverValue);
   };
 
   const handleMouseLeave = (value) => {
@@ -30,9 +30,9 @@ const StarsRating = () => {
   const handleSubmit = async (rating) => {
     dispatch(setRate(rating));
     if (rating >= 4) {
-      dispatch(setPage(3));
+      dispatch(setPage(5));
     } else {
-      dispatch(setPage(4));
+      dispatch(setPage(3));
     }
   };
 
@@ -50,7 +50,7 @@ const StarsRating = () => {
             <span
               key={rating.id}
               className={`${rating.color} text-5xl px-1 cursor-pointer   ${
-                hoverValue > rating.id - 1 ? "text-blue-800" : "" //text-blue-500 doesn't work
+                hoverValue > rating.id - 1 ? "text-blue-800" : ""
               }`}
               onClick={() => handleSubmit(rating.id)}
               onMouseOver={() => handleMouseOver(rating.id)}
@@ -60,7 +60,6 @@ const StarsRating = () => {
             </span>
           );
         })}
-        {/* {console.log(hoverValue)} */}
       </div>
     </div>
   );

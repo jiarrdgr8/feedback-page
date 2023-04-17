@@ -1,7 +1,7 @@
 import React from "react";
 import { BsChevronLeft } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { decrementPage } from "../redux/counter";
+import { setPage } from "../redux/counter";
 
 const Fantastic = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const Fantastic = () => {
     <div className="flex flex-col justify-start align-middle text-left w-[480px] py-12  my-auto text-slate-300 ">
       <div
         className="flex items-center align-middle cursor-pointer hover:scale-105 duration-300"
-        onClick={() => dispatch(decrementPage())}
+        onClick={() => dispatch(setPage(2))}
       >
         <span className="mr-1">
           <BsChevronLeft />
