@@ -18,7 +18,6 @@ const ShareExp = () => {
       title: "Review on Facebook",
       bg: "bg-blue-900",
       text: "text-white",
-      text: "text-white",
       image: fb,
       review_url: "https://www.facebook.com/", // URL of the establishment review at facebook
     },
@@ -43,28 +42,33 @@ const ShareExp = () => {
   const handleClick = () => {};
 
   return (
-    <div className="text-slate-300 flex justify-center align-middle items-center flex-col bg-blue-700 my-auto pt-10 pb-20 px-20 rounded-md">
-      {links.map((link) => {
-        return (
-          <a
-            href={link.review_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <div
-              key={link.id}
-              className={`flex ${link.text}  text-xl justify-between items-center py-2 px-8 rounded-md ${link.bg}  my-4 cursor-pointer`}
-              onClick={handleClick}
+    <div className="text-slate-300 flex flex-col justify-center  ">
+      <div className="text-slate-300 flex justify-center align-middle items-center flex-col bg-blue-700 py-10 px-20 rounded-lg">
+        {links.map((link) => {
+          return (
+            <a
+              href={link.review_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
             >
-              <h3>{link.title}</h3>
-              <span className="w-10 inline-block">
-                <img src={link.image} alt="review" className="w-full ml-3" />
-              </span>
-            </div>
-          </a>
-        );
-      })}
+              <div
+                key={link.id}
+                className={`flex ${link.text}  text-xl justify-between items-center py-2 px-8 rounded-md ${link.bg}  my-4 cursor-pointer hover:scale-105 duration-300`}
+                onClick={handleClick}
+              >
+                <h3>{link.title}</h3>
+                <span className="w-9 inline-block">
+                  <img src={link.image} alt="review" className="ml-3 w-full" />
+                </span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      <div className="flex justify-end pt-3 cursor-pointer hover:scale-105 duration-300">
+        <h2>No thanks &gt;</h2>
+      </div>
     </div>
   );
 };

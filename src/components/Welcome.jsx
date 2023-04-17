@@ -1,11 +1,10 @@
 import React from "react";
 import { RxDividerVertical } from "react-icons/rx";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { incrementPage } from "../redux/counter";
 
 const Welcome = () => {
-  const { page } = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
   return (
@@ -28,7 +27,7 @@ const Welcome = () => {
         </h4>
       </div>
       <button
-        className="flex items-center justify-center bg-blue-600 text-xl px-5 py-2 rounded-md font-bold w-full  mx-auto"
+        className="flex items-center justify-center bg-blue-600 text-xl px-5 py-2 rounded-md font-bold w-full  mx-auto hover:scale-105 duration-300"
         onClick={() => dispatch(incrementPage())}
       >
         <span>Let's Go!</span>

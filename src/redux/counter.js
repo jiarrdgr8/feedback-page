@@ -13,23 +13,20 @@ export const counterSlice = createSlice({
     incrementPage: (state) => {
       state.page += 1
     },
+    decrementPage: (state) => {
+      state.page -= 1
+    },
     setRate: (state, action) => {
       state.rate = action.payload
-      console.log(state.rate)
-      if(state.rate >= 4) {
-        state.page =+ 3
-      }
-      else {
-        state.page = 4
-      }
+      // console.log(state.rate)      
     },
-    hoverValue: (state, action) => {
-      state.hoverValue = action.payload
+    setPage: (state, action) => {
+      state.page = action.payload
     },
   },
 })
 
 
-export const { incrementPage, setRate, gotoPage } = counterSlice.actions
+export const { incrementPage, setRate, setPage, decrementPage } = counterSlice.actions
 
 export default counterSlice.reducer

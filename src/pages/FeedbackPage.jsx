@@ -9,11 +9,10 @@ import LowRatingResponse from "../components/LowRatingResponse";
 import LowRatingMessage from "../components/LowRatingMessage";
 import LastMessage from "../components/LastMessage";
 import FillUpForm from "../components/FillUpForm";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const FeedbackPage = () => {
   const { page } = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
 
   let pageContent;
   switch (page) {
